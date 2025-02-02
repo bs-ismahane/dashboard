@@ -1,0 +1,77 @@
+:root{
+    --blue-color:#0075ff;
+    --blue-alt-color:#0d69d5;
+    --orange-color:#f59e0b;
+    --red-color:#f44336;
+    --green-color:#22c55e;
+    --grey-color:#888;
+}
+@media(min-width:768px){
+    .friends-page{
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap:20px;
+    }
+}
+@media(max-width:767px){
+    .friends-page{
+        grid-template-columns:minmax(200px,1fr);
+        gap:10px;
+        margin:0 10px;
+    }
+}
+.friend .contact{
+    position:absolute;
+    top: 10px;
+    left:10px;
+}
+.friend .contact i{
+    background-color: #eee;
+    padding:10px;
+    border-radius:50%;
+    color:var(--grey-color);
+    transition:0.3s;
+    font-size:12px;
+    margin-right:5px;
+}
+.friend .contact i:hover{
+    background:var(--blue-color);
+    color:white;
+}
+.friend img{
+    height:100px;
+    width:100px;
+}
+.friend .icons{
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+    padding:15px 0;
+}
+.friend .icons i{
+    margin-right:5px;
+}
+.vip .icons::before{
+    content:"VIP";
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:58px;
+    font-weight:700;
+    color: var(--orange-color);
+    opacity:0.2;
+}
+@media(max-width:767px){
+    .friend .info{
+        flex-direction:column;
+    }
+    .friend .info span{
+        margin-bottom:10px;
+    }
+    .friend .info div a{
+        display: block;
+        margin-top:5px;
+        text-align: center;
+    }
+}
+
+

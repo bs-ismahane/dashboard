@@ -1,0 +1,85 @@
+:root{
+    --blue-color:#0075ff;
+    --blue-alt-color:#0d69d5;
+    --orange-color:#f59e0b;
+    --red-color:#f44336;
+    --green-color:#22c55e;
+    --grey-color:#888;
+}
+.files-page{
+    align-items:start;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+@media(min-width:768px){
+    .files-page .files-stats{
+        min-width:280px;
+    }
+}
+@media(max-width:767px){
+    .files-page .files-stats{
+        min-width:200px;
+    }
+}
+.files-page .files-stats > div:hover{
+    background-color:#ddd;
+}
+.files-page .files-stats > div .icon{
+    width:40px;
+    height:40px;
+    margin-right:10px;
+}
+.files-page .files-stats > div .size{
+    margin-left:auto;
+}
+.files-page .files-stats a{
+    margin-left:auto;
+    margin-right:auto;
+    padding:10px 15px;
+    border-radius:6px;
+}
+.files-page .files-stats a:hover{
+    background-color:var(--blue-alt-color);
+}
+.files-page .files-stats a i{
+    font-size: 14px;
+    margin-right:5px;
+}
+.files-page .files-stats a:hover i{
+    animation: up-down 0.8s infinite ;
+}
+.files-page .files-info{
+    flex:1;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+}
+.files-page .files-info .file {
+    border:0.5px solid #eee;
+}
+.files-page .files-info .file i{
+    position:absolute;
+}
+.files-page .files-info .file:hover i{
+    color:var(--blue-alt-color);
+}
+.files-page .files-info .file img{
+    width:64px;
+    height:64px;
+    transition: 0.3s;
+}
+.files-page .files-info .file:hover img{
+    transform: rotate(5deg);
+}
+.files-page .files-info .file .info{
+    border-top:1px solid #eee;
+}
+@keyframes up-down {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

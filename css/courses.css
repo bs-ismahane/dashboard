@@ -1,0 +1,54 @@
+:root{
+    --blue-color:#0075ff;
+    --blue-alt-color:#0d69d5;
+    --orange-color:#f59e0b;
+    --red-color:#f44336;
+    --green-color:#22c55e;
+    --grey-color:#888;
+}
+@media(min-width:768px){
+    .coursers-page{
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap:20px;
+    }
+}
+@media(max-width:767px){
+    .coursers-page{
+        grid-template-columns:minmax(200px,1fr);
+        gap:10px;
+        margin:0 10px;
+    }
+}
+.coursers-page .course{
+    overflow: hidden;
+}
+.coursers-page .course .cover{
+    width:100%;
+}
+.coursers-page .course .team{
+    position: absolute;
+    width:64px;
+    height:64px;
+    top:20px;
+    left:20px;
+    border-radius:50%;
+    border:2px solid white;
+}
+.coursers-page .course .team:hover{
+    box-shadow:0 0 4px 1px #ccc;
+}
+.coursers-page .course p{
+    line-height:1.7;
+}
+.coursers-page .course .info{
+    margin-top:25px;
+    padding-top:15px;
+    border-top:1px solid #eee;
+}
+.coursers-page .course .info .title{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    height:26px;
+    top:-13px;
+} 

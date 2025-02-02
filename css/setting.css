@@ -1,0 +1,212 @@
+:root{
+    --blue-color:#0075ff;
+    --blue-alt-color:#0d69d5;
+    --orange-color:#f59e0b;
+    --red-color:#f44336;
+    --green-color:#22c55e;
+    --grey-color:#888;
+}
+/*  */
+@media(max-width:767px){
+    .settings-page{
+        grid-template-columns:(300px,1fr);
+        margin-left:10px;
+        margin-right:10px;
+        gap:10px;
+    }
+}
+@media(min-width:768px){
+    .settings-page{
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+        margin-left:20px;
+        margin-right:20px;
+        gap:20px;
+    }
+}
+/* control box */
+label .toggle-checkbox{
+    display:none;
+}
+.toggle-switch{
+    background-color: #ccc;
+    width:78px;
+    height: 32px;
+    border-radius:16px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.toggle-switch::before{
+    font-family:var(--fa-style-family-classic);
+    content:"\f00d";
+    font-weight:900;
+    background-color:white;
+    width:24px;
+    height: 24px;
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    left:4px;
+    top:4px;
+    transition: 0.3s;
+} 
+label .toggle-checkbox:checked + .toggle-switch{
+    background-color:var(--blue-color);
+}
+label .toggle-checkbox:checked + .toggle-switch::before{
+    content:"\f00c";
+    color:var(--blue-alt-color);
+    left:50px;
+}
+.control .Close-message{
+    resize:none;
+    min-height:150px;
+}
+/* info box*/
+.Info input[type="email"]{
+    display:inline-flex;
+    width:calc(100% - 80px);
+    cursor:not-allowed;
+    background:rgba(0, 119, 255, 0.1);
+    color: var(--grey-color);
+}
+/* security box */
+.security > div:not(:last-of-type){
+    border-bottom: 1px solid #eee;
+}
+/* social box */
+.social div i{
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-right:none;
+    border-radius:6px 0 0 6px;
+    transition: 0.3s;
+}
+.social div:focus-within i{
+    color:#000;
+}
+.social input{
+    height:40px;
+    background-color:#f6f6f6;
+    border:1px solid #ddd;
+    padding-left:15px;
+    border-radius:0 6px 6px 0;
+}
+/* widget */
+.widgets > div input{
+    display: none;
+}
+.widgets > div label{
+    padding-left:30px;
+    cursor: pointer;
+    position: relative;
+}
+.widgets > div label::before{
+    content:"";
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    width:14px;
+    height: 14px;
+    border:2px solid var(--grey-color);
+    border-radius:2px;
+}
+.widgets > div label::after{
+    font-family: var(--fa-style-family-classic);
+    content:"\f00c";
+    font-weight:800;
+    position: absolute;
+    left:1px;
+    top:50%;
+    color:white;
+    background-color:var(--blue-color);
+    font-size:12px;
+    height:16px;
+    width:16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:scale(0) rotate(360deg);
+    transition:0.3s;
+    margin-top:-8px;
+}
+.widgets > div:hover label::before,
+.widgets > div input:checked+label::before{
+    border-color: var(--blue-color);
+}
+.widgets > div input:checked+label::after{
+    transform: scale(1);
+}
+/* Manger box */
+.manager input{
+    appearance:none;
+}
+.manager .time label{
+    padding-left:30px;
+    cursor: pointer;
+    position: relative;
+    font-weight:500;
+}
+.manager .time label::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    width:18px;
+    height:18px;
+    border:2px solid var(--grey-color);
+    border-radius:50%;
+    transition:0.3s;
+}
+.manager .time input:checked + label::before{
+    border-color:var(--blue-color);
+}
+.manager .time label::after{
+    content: "";
+    position: absolute;
+    left:5px;
+    top:50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--blue-color);
+    transform: scale(0) translateY(-50%);
+    transition:0.3s;
+}
+.manager .time input:checked + label::after{
+    transform:  translateY(-50%) scale(1);
+}
+.manager .services{
+    border-top:1px solid #ccc;
+    padding-top:20px;
+}
+.manager .services .service{
+    position: relative;
+    border-width:2px;
+}
+@media (max-width:767px) {
+    .manager .services{
+        flex-direction: column;
+    }
+    .manager .services .service{
+        margin-bottom:10px;
+    }
+}
+@media (min-width:768px) {
+    .manager .services .service{
+        margin-right:10px;
+    }
+}
+.manager .services label{
+    cursor: pointer;
+}
+.manager .services input:checked + .service{
+    border-color:var(--blue-color);
+    color: var(--blue-color);
+}
